@@ -1,4 +1,4 @@
-quoteDB = {
+var quoteDB = {
     "Oscar Wilde":  ["Be yourself; everyone else is already taken.",
                     "We are all in the gutter, but some of us are looking at the stars.",
                     "Most people are other people. Their thoughts are someone else's opinions, their lives a mimicry, their passions a quotation.",
