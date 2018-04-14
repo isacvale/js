@@ -1,0 +1,17 @@
+/*A very simple function that allows using <template> tags to add content to a website, written in Vanilla JS. You must pass the template querySelector (as in css) for the template you're using and for an anchor element already on the page. Finally, you should pass on an array of objects. In each object the keys correspond to the class of the element you wish to change and its value correspond to the new content of that element*/
+function loadContent( template_ref, anchor_ref, content_array ){
+  var template_element = document.querySelector( template_ref );
+  var anchor_element = document.querySelector( anchor_ref );
+  
+  var new_element;
+  content_array.forEach( function(item){
+    new_element = document.createElement( 'span' );
+    new_element.innerHTML = template_element.innerHTML;
+    
+    for( var key in item){
+      new_element.getElementsByClassName( key )[0].innerHTML = item[key];
+    }
+    anchor_element.appendChild( new_element );
+  });
+}
+//loadContent("#template", "#here", [{"class1":"content1", "class2":"content2"}, {"class1":"content3", "class2":"content4"}]);
